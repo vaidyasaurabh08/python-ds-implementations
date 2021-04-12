@@ -9,11 +9,17 @@ class SLinkedList:
     def __init__(self):
         self.head = None
 
+
+    def addMultiple(self, values: list):
+        for value in values:
+            self.appendAtEnd(value)
+
+
     def print(self):
         listText = ""
         current = self.head
         while current:
-            listText += current.data + "-"
+            listText += str(current.data) + "-"
             current = current.next
         print(listText, "\n")
 
@@ -55,6 +61,11 @@ class SLinkedList:
 
     def appendAtEnd(self, data):
         newNode = Node(data=data)
+
+        if not self.head:
+            self.head = newNode
+            return
+
         current = self.head
         
         while(current.next):
@@ -114,46 +125,62 @@ class SLinkedList:
             previousNode.next = current.next
             return
 
+    def get_values(self):
+        """
+            returns a list of node values
+        """
+        if not self.head:
+            return []
 
-sLinkedList = SLinkedList()
+        values = []
+        current = self.head
+        while(current):
+            values.append(current.data)
+            current = current.next
+        
+        return values
+
+if __name__ == '__main__':
+
+    sLinkedList = SLinkedList()
 
 
-print("Inserting First at the start")
-sLinkedList.insertAtStart("First")
-sLinkedList.print()
+    print("Inserting First at the start")
+    sLinkedList.insertAtStart("First")
+    sLinkedList.print()
 
-print("Deleting Last node")
-sLinkedList.deleteLastNode()
-sLinkedList.print()
+    print("Deleting Last node")
+    sLinkedList.deleteLastNode()
+    sLinkedList.print()
 
-print("Inserting Second at the start")
-sLinkedList.insertAtStart("Second")
-sLinkedList.print()
+    print("Inserting Second at the start")
+    sLinkedList.insertAtStart("Second")
+    sLinkedList.print()
 
-print("Inserting Third at the start")
-sLinkedList.insertAtStart("Third")
-sLinkedList.print()
+    print("Inserting Third at the start")
+    sLinkedList.insertAtStart("Third")
+    sLinkedList.print()
 
-print("Appending end at the end")
-sLinkedList.appendAtEnd("end")
-sLinkedList.print()
+    print("Appending end at the end")
+    sLinkedList.appendAtEnd("end")
+    sLinkedList.print()
 
-print("Appending end2 at the end")
-sLinkedList.appendAtEnd("end2")
-sLinkedList.print()
+    print("Appending end2 at the end")
+    sLinkedList.appendAtEnd("end2")
+    sLinkedList.print()
 
-print("Inserting end1 after end")
-sLinkedList.insertBetween("end", "end1")
-sLinkedList.print()
+    print("Inserting end1 after end")
+    sLinkedList.insertBetween("end", "end1")
+    sLinkedList.print()
 
-print("Deleting First node")
-sLinkedList.deleteFirstNode()
-sLinkedList.print()
+    print("Deleting First node")
+    sLinkedList.deleteFirstNode()
+    sLinkedList.print()
 
-print("Deleting Last node")
-sLinkedList.deleteLastNode()
-sLinkedList.print()
+    print("Deleting Last node")
+    sLinkedList.deleteLastNode()
+    sLinkedList.print()
 
-sLinkedList.print()
-sLinkedList.deleteNode("end1")
-sLinkedList.print()
+    sLinkedList.print()
+    sLinkedList.deleteNode("end1")
+    sLinkedList.print()
