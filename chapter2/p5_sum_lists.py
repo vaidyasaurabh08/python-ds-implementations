@@ -1,9 +1,6 @@
 from LinkedLists.singlyLinkedList import SLinkedList
 
 
-
-
-
 def sumLists(a_ll, b_ll, ll, carry=0):
     if a_ll and b_ll:
         sum_el = a_ll.data + b_ll.data + carry
@@ -28,7 +25,6 @@ def sumLists(a_ll, b_ll, ll, carry=0):
         return ll
 
 
-
 test_cases = (
     ([2,9,5,6], [7,1,6], [9,0,2,7,0]),
     ([], [], [])
@@ -48,29 +44,10 @@ def test_add_lists():
         b_ll.addMultiple(values=b_values)
 
         result_ll = sumLists(a_ll.head, b_ll.head, SLinkedList())
-
         assert result_ll.get_values() == expected
 
 
-
-        
-
-
-
 if __name__ == '__main__':
-    # a_ll = SLinkedList()
-    # a_ll.addMultiple(values=[2,9,5,6])
-    
-    # b_ll = SLinkedList()
-    # b_ll.addMultiple(values=[7,1,6])
-
-    # a_ll.print()
-    # b_ll.print()
-
-    # result_ll = SLinkedList()
-
-    # print(sumLists(a_ll.head, b_ll.head, result_ll))
-    # result_ll.print()
     test_add_lists()
 
 
