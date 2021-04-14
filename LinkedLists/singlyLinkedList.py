@@ -11,6 +11,8 @@ class SLinkedList:
 
 
     def addMultiple(self, values: list):
+        if not values:
+            return
         for value in values:
             self.appendAtEnd(value)
 
@@ -71,6 +73,15 @@ class SLinkedList:
         while(current.next):
             current = current.next
         current.next = newNode
+
+    
+    def getNodeWithValue(self, data):
+        current = self.head
+
+        while current:
+            if current.data == data:
+                return current
+            current = current.next
 
     
     def deleteFirstNode(self):
@@ -138,6 +149,8 @@ class SLinkedList:
             values.append(current.data)
             current = current.next
         
+        print(self.print())
+        print("returning ", values)
         return values
 
 if __name__ == '__main__':
