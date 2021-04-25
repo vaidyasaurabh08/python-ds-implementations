@@ -79,3 +79,12 @@ root.printPreOrder()
 
 print("\n")
 root.printPostOrder()
+
+"""
+python .\binaryTree.py
+ 10 -> 14 -> 19 -> 27 -> 31 -> 35 -> 42 ->
+
+ 27 -> 14 -> 10 -> 19 -> 35 -> 31 -> 42 ->
+
+ 10 -> 19 -> 14 -> 31 -> 42 -> 35 -> 27 ->
+ """
