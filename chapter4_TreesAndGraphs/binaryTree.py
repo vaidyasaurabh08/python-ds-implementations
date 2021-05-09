@@ -21,7 +21,7 @@ class Node:
             return
         
         if data < self.data:
-            if not self.leftNode:
+            if not self.leftNode: 
                 self.leftNode = Node(data)
             else:
                 self.leftNode.insert(data)
